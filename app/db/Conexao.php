@@ -13,7 +13,7 @@ class Conexao {
 
     private static $host = '127.0.0.1';
     private static $usuario = 'root';
-    private static $senha = 'disktorkio';
+    private static $senha = '';
     private static $banco = 'faculdade';
 
 
