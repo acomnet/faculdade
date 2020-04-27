@@ -53,4 +53,16 @@ class AlunoDAO{
         $update->alterarBanco($this->tabela, $dados, "WHERE id = :id", "id={$dados['id']}");
         return $update->getResultado();
     }
+
+    public function listarAlunoCpfResponsavel($cpf){
+        $sql = "SELECT a.id, a.nome, a.cpf, a.data_nasc, a.matricula, c.nome AS curso, a.responsavel, a.cpf_responsavel, a.email, c.valor"
+            ." FROM aluno AS a"
+            ." INNER JOIN curso AS c"
+            ." ON a.curso = c.id";
+        $sql = $sql." WHERE a.cpf = '{$cpf}' ORDER BY nome ASC";
+
+        $read = new Read();
+        $read->pesquisarDiretoBanco($sql);
+        return $read->getResultado()[0];
+    }
 }

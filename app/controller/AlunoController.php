@@ -46,6 +46,10 @@ class AlunoController{
         return $this->alunodao->listarAlunoComCurso($pesquisa);
     }
 
+    public function buscarAlunoCpf($cpf){
+        return $this->alunodao->listarAlunoCpfResponsavel($cpf);
+    }
+
     public function EditarAlunoId($id){
         return $this->alunodao->listarAlunoId($id);
     }

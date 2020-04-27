@@ -11,6 +11,20 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
+-- Copiando estrutura para tabela faculdade.aluno
+CREATE TABLE IF NOT EXISTS `aluno` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) DEFAULT NULL,
+  `cpf` varchar(14) DEFAULT NULL,
+  `data_nasc` varchar(8) DEFAULT NULL,
+  `matricula` varchar(10) DEFAULT NULL,
+  `curso` int(11) DEFAULT NULL,
+  `responsavel` varchar(255) DEFAULT NULL,
+  `cpf_responsavel` varchar(14) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+
 -- Copiando dados para a tabela faculdade.aluno: ~7 rows (aproximadamente)
 /*!40000 ALTER TABLE `aluno` DISABLE KEYS */;
 INSERT INTO `aluno` (`id`, `nome`, `cpf`, `data_nasc`, `matricula`, `curso`, `responsavel`, `cpf_responsavel`, `email`) VALUES
@@ -22,6 +36,14 @@ INSERT INTO `aluno` (`id`, `nome`, `cpf`, `data_nasc`, `matricula`, `curso`, `re
 	(21, 'Allef Coimbra de Andrade', '123.154.787-54', '321312', '123123', 1, 'Antonio', '5785757575', 'eliel@acomnet.com.br'),
 	(22, 'ademar da silva', '1232132313131', '03/04/20', '1231313213', 1, 'alzira', '888.555.888-54', 'ademar@acomnet.com.br');
 /*!40000 ALTER TABLE `aluno` ENABLE KEYS */;
+
+-- Copiando estrutura para tabela faculdade.curso
+CREATE TABLE IF NOT EXISTS `curso` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) DEFAULT NULL,
+  `valor` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 -- Copiando dados para a tabela faculdade.curso: ~10 rows (aproximadamente)
 /*!40000 ALTER TABLE `curso` DISABLE KEYS */;
@@ -39,6 +61,15 @@ INSERT INTO `curso` (`id`, `nome`, `valor`) VALUES
 	(11, 'Psicologia', 250.00),
 	(12, 'Teologia', 500.00);
 /*!40000 ALTER TABLE `curso` ENABLE KEYS */;
+
+-- Copiando estrutura para tabela faculdade.usuario
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) DEFAULT '0',
+  `senha` varchar(255) DEFAULT '0',
+  `tipo` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
 
 -- Copiando dados para a tabela faculdade.usuario: ~13 rows (aproximadamente)
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;

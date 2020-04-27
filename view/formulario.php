@@ -23,6 +23,7 @@ $edit = false;
 
     } else {
         echo "Você não pode acessar essa página";
+
     }
 }else{
     header('Location: index.php?erro=permission');
@@ -50,7 +51,7 @@ require_once 'template/header.php';
 
                 <div class="mb-3">
                     <label for="cpf">CPF:</label>
-                    <input type="text" class="form-control" placeholder="" name="cpf" <?php if($edit){echo "value=".$aluno['cpf'];} ?>>
+                    <input type="text" class="form-control" onkeypress="$(this).mask('000.000.000-00');" placeholder="" name="cpf" <?php if($edit){echo "value=".$aluno['cpf'];} ?>>
                 </div>
 
                 <div class="mb-3">

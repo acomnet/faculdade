@@ -38,3 +38,31 @@
     background: #6bb6c4;
     color: #fff;
 }
+
+.form_guia{
+    text-align: center;
+    padding: 40px;
+}
+
+.form_guia .input_cpf{
+    display: inline-block;
+}
+.form_guia .input_cpf h5{
+    display: inline-block;
+    padding: 5px;
+}
+.form_guia .input_cpf input{
+    display: inline-block;
+}
+.form_guia .input_cpf button{
+    border:none;
+    background: green;
+    display: block;
+    color: #fff;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.form_guia .input_cpf button:hover{
+ background: mediumseagreen;
+}
