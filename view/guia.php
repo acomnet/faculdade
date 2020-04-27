@@ -137,11 +137,10 @@ if(isset($_SESSION['email']) && isset($_SESSION['senha'])) {
 
 
             }else{
-                echo "Você não está autorizado a realizar esse procedimento";
+                header('Location: guia.php?msg=Você não está autorizado a realizar esse procedimento');
             }
         }else{
-            echo "Informações inválidas";
-
+            header('Location: guia.php?msg=Informações inválidas');
         }
         //header('Location: guia_pdf.php');
     }else{
@@ -153,7 +152,17 @@ if(isset($_SESSION['email']) && isset($_SESSION['senha'])) {
 
 require_once 'template/header.php';
 
+
+if(isset($_GET['msg'])){
+        echo "<div class=\"alert alert-danger\" id=\"danger-alert\">
+            <button type=\"button\" class=\"close\" data-dismiss=\"alert\">x</button>
+            ".$_GET['msg']."
+            </div>";
+}
+
 ?>
+
+
     <div class="container form_guia">
 
     <form method="post" action="guia.php" target="_blank">
